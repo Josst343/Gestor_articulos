@@ -1,0 +1,21 @@
+<%= form_with model: articulo do |form| %>
+  <div>
+    <%= form.label :titulo %><br>
+    <%= form.text_field :titulo %>
+    <% articulo.errors.full_messages_for(:titulo).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %><br>
+    <% articulo.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
